@@ -12,11 +12,13 @@ const RegisterScreen = () => {
     const location = useLocation();
     let navigate = useNavigate();
     const dispatch = useDispatch();
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [name, setName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    //const [role, setRole] = useState('ROLE_MEMBDER');
+    const [isSubcribed, setIsSubscribed] = useState(false);
 
     const [message, setMessage] = useState('');
 
@@ -39,7 +41,7 @@ const RegisterScreen = () => {
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         } else {
-            dispatch(register(name, email, password))
+            dispatch(register(firstName, lastName, email, password, isSubcribed))
         }
     }
 
@@ -50,10 +52,15 @@ const RegisterScreen = () => {
             {error && <Messsage variant='danger'>{error}</Messsage>}
             {loading && <Loader />}
             <Form onSubmit={(e) => submitHandler(e)}>
-                <Form.Group controlId='name'>
+                <Form.Group controlId='firstName'>
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type='name' placeholder='Enter Name'
-                        value={name} onChange={(e) => setName(e.target.value)} />
+                    <Form.Control type='firstname' placeholder='Enter First Name'
+                        value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId='name'>
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control type='name' placeholder='Enter Last Name'
+                        value={lastName} onChange={(e) => setLastName(e.target.value)} />
                 </Form.Group>
                 <Form.Group controlId='email'>
                     <Form.Label>Email Address</Form.Label>
