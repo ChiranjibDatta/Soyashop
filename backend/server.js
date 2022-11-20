@@ -6,8 +6,9 @@ import path from 'path'
 
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url, '..');
+let __dirname = path.dirname(__filename, '..');
+__dirname = path.join(__dirname, '..')
 console.log('directory-name 👉️', __dirname);
 import connectDB from './config/db.js'
 
