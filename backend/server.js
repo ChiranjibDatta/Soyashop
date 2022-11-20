@@ -1,11 +1,15 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import colors from 'colors'
+
+import path from 'path'
 import connectDB from './config/db.js'
 
 import productRoutes from './routes/productRoute.js'
 import userRoutes from './routes/userRoutes.js'
 import authRoutes from './routes/authRoutes.js'
+
+
 
 
 import {notFound, errorHandler} from './middleware/errorMiddleware.js'
