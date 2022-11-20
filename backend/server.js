@@ -3,6 +3,12 @@ import dotenv from 'dotenv'
 import colors from 'colors'
 
 import path from 'path'
+
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+console.log('directory-name 👉️', __dirname);
 import connectDB from './config/db.js'
 
 import productRoutes from './routes/productRoute.js'
