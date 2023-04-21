@@ -19,7 +19,7 @@ const HomeScreen = () => {
   }, [dispatch])
 
   const productListView = (<Row>
-    {products.length > 0 && products.map((product) => (
+    {products && products.length > 0 && products.map((product) => (
       <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
         <Product product={product} />
       </Col>

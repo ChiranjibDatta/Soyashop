@@ -3,15 +3,19 @@ import dotenv from 'dotenv'
 import Mailgun from 'mailgun.js';
 
 dotenv.config()
-
-const mailCredentials = {
+/** 
+ * const mailCredentials = {
     domain: process.env.DOMAIN,
     apiKey: process.env.APIKEY
 };
+ * 
+*/
+
 const sendEmail = async (recipient, message) => {
 
     //const mg = mailgun({apiKey: mailCredentials.apiKey, domain: mailCredentials.domain});
-    const mg = mailgun.client({username: 'api', key: mailCredentials.apiKey || 'key-yourkeyhere', url: 'https://api.eu.mailgun.net'});
+    /**
+     * const mg = mailgun.client({username: 'api', key: mailCredentials.apiKey || 'key-yourkeyhere', url: 'https://api.eu.mailgun.net'});
     const data = {
         from: `Excited User <me@samples.mailgun.org>`,
         to: recipient,
@@ -23,6 +27,7 @@ const sendEmail = async (recipient, message) => {
         console.log(resp)
     } catch (err) {
         throw err;
-    }
+    }*/
+    console.log("RESP")
 };
 export {sendEmail};
