@@ -25,4 +25,4 @@ jobs:
     # Runs a single command using the runners shell
     - name: getting
       run: |
-        curl --request GET --url "https://freelancertest.atlassian.net/rest/api/3/issue/FREEL-1" --user "chiranjib.nita@gmail.com:ATATT3xFfGF0-U1OLsYeWWshD7YBJW8lIS01VjDWjYLCDstuXXB3UGgp4Jnyu-hd8ae-L5Fn8PwcICyk4dZ3tRqkKbp3FXt6OWb9D6RWJYzGjUlZ6BUP2_hrZD4Gnp70mhoxsAK_8G1aFqUulpDX31y5LoDzBBf1FKlRKYwXj9-_XxwxGwXBxKE=0B970373" --header 'Accept: application/json' --header 'Content-Type: application/json'
+        curl --request GET --url "https://freelancertest.atlassian.net/rest/api/3/issue/${inputs.key}" --user "chiranjib.nita@gmail.com:ATATT3xFfGF0-U1OLsYeWWshD7YBJW8lIS01VjDWjYLCDstuXXB3UGgp4Jnyu-hd8ae-L5Fn8PwcICyk4dZ3tRqkKbp3FXt6OWb9D6RWJYzGjUlZ6BUP2_hrZD4Gnp70mhoxsAK_8G1aFqUulpDX31y5LoDzBBf1FKlRKYwXj9-_XxwxGwXBxKE=0B970373" --header 'Accept: application/json' --header 'Content-Type: application/json'
